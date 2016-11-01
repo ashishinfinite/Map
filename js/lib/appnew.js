@@ -44,7 +44,6 @@ var model = function() {
         self.ww=ko.observable(0);
         self.ww1=ko.observable(0);
         self.top_nav_heading = "GUJARAT LOCATIONS";
-        self.ashish2=ko.observableArray([]);
         self.placeArray = ko.observableArray([]);  // this will bw the array of objects of places withtheir data contained in info array at the top
         info.forEach(function(infos) {
             self.placeArray().push(new maps(infos));
@@ -107,49 +106,49 @@ var model = function() {
         };
         //2
         self.filteredItems=function(array,search){          /// thhis upper 
+     
             self.ashish2([]);
             var searching=search.toLowerCase();
             console.log(searching);
             for(var i=0;i<array.length;i++){
+            
                 ite=self.stringStartsWith (array[i].title(),searching);
-                if (ite===true){
-                    self.ashish2().push(array[i].title());
+               if (ite===true){
+                console.log(array[i].title());
+                return array[i].title();
                 }
             }
         };
         //3
-        self.ashishh=ko.computed(function(){
-            //return self.filteredItems(self.placeArray(),self.input_place());
-            self.filteredItems(self.placeArray(),self.input_place());
-            for (var k=0;k<self.placeArray().length;k++){
-                self.placeArray()[k].id(0);
-            }
-            if(self.input_place()===''){
-                for (var k=0;k<self.placeArray().length;k++){
-                    self.placeArray()[k].id(1);
-                }
-            }
-            self.ashish2().forEach(function(item){
-                for(var i=0;i<self.placeArray().length;i++){
-                    if (item===self.placeArray()[i].title()){
-                        self.placeArray()[i].id(1);    
-                    }
-             //    console.log(self.placeArray()[i].index(),self.placeArray()[i].id());
-                }
-
-            });
-            for (var k=0;k<self.placeArray().length;k++){
-                jesse1( self.placeArray()[k]);
-                jesse( self.placeArray()[k]);
-            }     
-
+        self.ashish=ko.computed(function(){
+            return self.filteredItems(self.placeArray(),self.input_place());
         });
+        
 
 
+
+
+        self.validation = ko.computed(function() {     // this function handels filter search functionality          
+           
+            self.placeArray().forEach(function(obj, i) {
+
+                if ((obj.title() ===self.ashish() ) || self.input_place() === '') {  // when there the inputted placename is matched with any of the place in the list
+                  // or when the filter search box is empty  make marker visible. by seting there id's to 1.                         
+                       
+                       obj.id(1);
+
+                } else if ((obj.title() !== self.ashish()) && self.input_place() !== '') { //when the inputted placename dosen't match with any and the 
+                  // filter search box is non empty then make the markers visible .by setting there id's to 0.
+                        obj.id(0);
+                }
+                jesse1(obj);  // this function is actually makes marker hide ,obj is boject that contains place related data and as well as id and index 
+                jesse(obj);   // this function is actually makes marker show,obj is boject that contains place related data and as well as id and index
+            });
+        });
     }; // end of models
 
 // map loading javascript file
-// this is the function called when map is requested by google map api to display,style the map.
+// this is the callback function called when map is requested by google map api to display,style the map.
 
 function initMap() {
     map = new google.maps.Map(document.getElementById('map'), {

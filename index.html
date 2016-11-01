@@ -1,3 +1,4 @@
+<!-- now dom is handled properly and improved with markers handeled-->
 <!DOCTYPE html>
 <html lang="en">
 
@@ -22,23 +23,24 @@
         </div>
 
 
-        <div class="container">
+        <div class="container" data-bind="css: {slides: ww1()>0 }" >
 
             <div class="inp"> <input class="inp2" type="text" placeholder="search for state" data-bind="textInput:input_place" />
                 <!-- this filter search box -->
-                <button class="filter" data-bind="click:validation()">Filter</div>  <!-- this used for filteing search box -->
-        </button>
+                <div class="filter">Filter  <!-- this used for filteing search box -->
+        </div>
+        </div>
                 <!-- NAME:<div class="reflect" data-bind="text:input_place"></div> -->
                 <!-- uncomment the above line to see wheter inputting is working  or not -->
                 <div class="list-places" data-bind="foreach:placeArray">
                     <a id="places" data-bind="text:title,visible:id,click:$parent.mask"></a>
                 </div>
             </div>
-            <div id='map'></div>
-            <div class='hem-2' data-bind='click:close2'>ARTICLE SECTION &#9776</div>
+            <div id='map' data-bind="css: {marg: ww1()>0 }"></div>
+            <div class='hem-2' data-bind='click:close2,css: {marg2: ww()>0 }'>ARTICLE SECTION &#9776</div>
             <!-- this is used for article section -->
-            <div class="container-1">
-                <div id='nytimes-header'></div>
+            <div class="container-1" data-bind="css: {slides2: ww()>0 }">
+                <div id='nytimes-header' ></div>
 
                 <ul id='nytimes-articles'></ul>
             </div>
@@ -49,11 +51,12 @@
 
         <!-- loads map -->
 
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhewl-qltN3dzy0w0HAsZmt4Hn1Hz0rFM&v=3&callback=initMap" onerror="ashish()">
-        </script>
         <script src="js/jquery.min.js"></script>
         <script src="js/lib/knockout-3.2.0.js"></script>
         <script src="js/app.js"></script>
+        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhewl-qltN3dzy0w0HAsZmt4Hn1Hz0rFM&v=3&callback=initMap" onerror="ashish()">
+        </script>
+     
 </body>
 
 </html>
