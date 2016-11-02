@@ -1,52 +1,37 @@
-
-.container-1{
-
-position: absolute;
-top: 60px;
-right: 0px;
-z-index: 2;
-width: 0;
-height: 100%;
-transition: 0.6s ease;
-overflow-x: hidden;
-overflow-y: hidden;
-color: white; 
-background-color: #1e3d70;
-transition: 0.6s ease
-
+.container-1 {
+    position: absolute;
+    top: 60px;
+    right: 0px;
+    z-index: 2;
+    width: 0;
+    height: 100%;
+    transition: 0.6s ease;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    color: white;
+    background-color: #1e3d70;
+    transition: 0.6s ease
 }
-
 .hem-2 {
-
-position: absolute;
-cursor: pointer;
-top: 55%;
-right: 0px;
-z-index: 2;
-border-top-left-radius: 10px;
-padding: 2px;
-padding-left: 5px;
-background-color: black; 
-transition: 0.6s ease
-
+    position: absolute;
+    cursor: pointer;
+    top: 55%;
+    right: 0px;
+    z-index: 2;
+    border-top-left-radius: 10px;
+    padding: 2px;
+    padding-left: 5px;
+    background-color: black;
+    transition: 0.6s ease
 }
-
 .hem-2:hover {
-
-color: #423f3f;
-
+    color: #423f3f;
 }
-
 .container-1.slides2 {
-
-width: 220px;
-transition: 0.6s ease;
-
+    width: 220px;
+    transition: 0.6s ease;
 }
-
 .hem-2.marg2 {
-
-right: 220px;
-transition: 0.6s ease;
-
+    right: 220px;
+    transition: 0.6s ease;
 }

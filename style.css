@@ -1,228 +1,156 @@
-*{
-
-color: white;
-box-sizing: border-box;
-font-family: "Lato", sans-serif;   
-
+* {
+    color: white;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
 }
-
 body,
-html
-{   
-margin: 0;
-padding: 0;
-background-color: black;
-height: 100%;
-overflow-y: hidden;
-overflow-x: hidden;
-
+html {
+    margin: 0;
+    padding: 0;
+    background-color: black;
+    height: 100%;
+    overflow-y: hidden;
+    overflow-x: hidden;
 }
-
 .master {
-
-max-width: 100%;
-height: 100%;
-
+    max-width: 100%;
+    height: 100%;
 }
-
 .top-nav {
-
-background-color: black;
-padding: 20px;
-display: flex;
-max-width: 100%;
-flex-direction: row;
-flex-wrap: nowrap;
-z-index: -2;
-
+    background-color: black;
+    padding: 20px;
+    display: flex;
+    max-width: 100%;
+    flex-direction: row;
+    flex-wrap: nowrap;
+    z-index: -2;
 }
-
 .hem {
-
-cursor: pointer;
-margin-left: 60px;
-
+    cursor: pointer;
+    margin-left: 60px;
 }
-
-
 .hem.slides {
-width: 0;
-
+    width: 0;
 }
-
 .heading1 {
-
-margin-left: 40px;
-
+    margin-left: 40px;
 }
-
 input {
-
-color: black;
-width: 100%;
-text-align: center;
- 
+    color: black;
+    width: 100%;
+    text-align: center;
 }
-
 .reflect {
-
-color: white;
-width: 100%;
-height: 10%;
-
+    color: white;
+    width: 100%;
+    height: 10%;
 }
-
-
 .filter {
-
-width: 25%;
-padding-top: 5px;
-background-color: #2196F3;
-text-align: center;
-border-top-right-radius: 4px;
-border-bottom-right-radius: 4px;
-cursor: pointer;
-
+    width: 25%;
+    padding-top: 5px;
+    background-color: #2196F3;
+    text-align: center;
+    border-top-right-radius: 4px;
+    border-bottom-right-radius: 4px;
+    cursor: pointer;
 }
-
 .inp {
-
-display: flex;
-flex-direction: row;
-max-width: 100%;
-margin-top: 14px;
-text-transform: uppercase;
-
+    display: flex;
+    flex-direction: row;
+    max-width: 100%;
+    margin-top: 14px;
+    text-transform: uppercase;
 }
-
 .inp2 {
-
-padding: 2px;
-font-size: 1.2em;
-
+    padding: 2px;
+    font-size: 1.2em;
 }
-
 .container {
-
-top: 60px;
-z-index: 2;
-position: absolute;
-background-color: black;
-height: 100%;
-width: 300px;
-opacity: 0.9;
-overflow-x: hidden;
-transition: 0.6s ease;
-
+    top: 60px;
+    z-index: 2;
+    position: absolute;
+    background-color: black;
+    height: 100%;
+    width: 300px;
+    opacity: 0.9;
+    overflow-x: hidden;
+    transition: 0.6s ease;
 }
-
 .container.slides {
-
-width: 0;
-transition: 0.6s ease
-
-
+    width: 0;
+    transition: 0.6s ease
 }
-
 .list-places {
-
-transition: 0.1s ease;
-display: flex;
-flex-direction: column;
-
+    transition: 0.1s ease;
+    display: flex;
+    flex-direction: column;
 }
-
 #places {
-
-list-style: none;
-padding: 5px;
-text-align: center;
-cursor: pointer;
-border-left: 8px #423f3f solid;
-border-top-left-radius: 4px;
-border-bottom-left-radius: 4px;
-border-bottom: 1px #423f3f solid;
-
+    list-style: none;
+    padding: 5px;
+    text-align: center;
+    cursor: pointer;
+    border-left: 8px #423f3f solid;
+    border-top-left-radius: 4px;
+    border-bottom-left-radius: 4px;
+    border-bottom: 1px #423f3f solid;
 }
-
 #places:hover {
-
-background-color: #423f3f;
-transition: 0.4s ease;
-
-
+    background-color: #423f3f;
+    transition: 0.4s ease;
 }
-
 .place-heading {
-
-margin: 0 auto;
-width: 100%;
-text-align: center;
-font-size: 20px;
-clear: both;
-
+    margin: 0 auto;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+    clear: both;
 }
-
-
-
 #map {
-
-z-index: 2;
-width: 100%;
-height: 100%;
-margin-left: 300px;
-transition: 0.6s ease
-background-color: black;
-
+    z-index: 2;
+    width: 100%;
+    height: 100%;
+    margin-left: 300px;
+    transition: 0.6s ease background-color: black;
 }
-
 /*when side-nav slides map also slides*/
-#map.marg{
 
-margin-left: 0px;
-transition:0.6s ease;
-
+#map.marg {
+    margin-left: 0px;
+    transition: 0.6s ease;
 }
-
 /*This is used for error handling block styling*/
+
 .ee {
-
-margin-left: 400px;
-
+    margin-left: 400px;
 }
-
 #nytimes-header {
-
-position: absolute;
-top: 0px;
-right: 0px;
-padding: 0 10px;
-background-color: black;
-width: 220px;
-opacity: 0.8;
-
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    padding: 0 10px;
+    background-color: black;
+    width: 220px;
+    opacity: 0.8;
 }
-
 #nytimes-articles {
-
-position: absolute;
-margin-top: 35px;
-right: 0px;
-z-index: 3;
-width: 220px;
-padding: 0 10px;
-overflow-y: hidden;
-overflow-y: auto;
-height: 100%;
-color: white; 
-
+    position: absolute;
+    margin-top: 35px;
+    right: 0px;
+    z-index: 3;
+    width: 220px;
+    padding: 0 10px;
+    overflow-y: hidden;
+    overflow-y: auto;
+    height: 100%;
+    color: white;
 }
-
 .article {
-
-list-style-type: none;
-width: 100%;
-color: white;
-
+    list-style-type: none;
+    width: 100%;
+    color: white;
 }
-
+.datas {
+    width: 100%;
+    color: red;
+}

@@ -1,62 +1,49 @@
 <!-- now dom is handled properly and improved with markers handeled-->
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
-
     <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="shortcut icon" type="image/jpg" href="iron.jpg">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="responsive-style.css">
-
     <title>Location Finder</title>
-
-
-
 </head>
-
 <body>
     <div class="master">
         <div class="top-nav">
             <div class="heading1" data-bind="text:top_nav_heading"></div>
             <div class="hem" data-bind="click:close">&#9776</div>
         </div>
-
-
-        <div class="container" data-bind="css: {slides: ww1()>0 }" >
-
+        <nav class="container" data-bind="css: {slides: ww1()>0 }" >
             <div class="inp"> <input class="inp2" type="text" placeholder="search for state" data-bind="textInput:input_place" />
                 <!-- this filter search box -->
                 <div class="filter">Filter  <!-- this used for filteing search box -->
-        </div>
-        </div>
-                <!-- NAME:<div class="reflect" data-bind="text:input_place"></div> -->
-                <!-- uncomment the above line to see wheter inputting is working  or not -->
-                <div class="list-places" data-bind="foreach:placeArray">
-                    <a id="places" data-bind="text:title,visible:id,click:$parent.mask"></a>
                 </div>
             </div>
-            <div id='map' data-bind="css: {marg: ww1()>0 }"></div>
-            <div class='hem-2' data-bind='click:close2,css: {marg2: ww()>0 }'>ARTICLE SECTION &#9776</div>
-            <!-- this is used for article section -->
-            <div class="container-1" data-bind="css: {slides2: ww()>0 }">
-                <div id='nytimes-header' ></div>
-
-                <ul id='nytimes-articles'></ul>
+                <!-- NAME:<div class="reflect" data-bind="text:input_place"></div> -->
+                <!-- uncomment the above line to see wheter inputting is working  or not -->
+            <div class="list-places" data-bind="foreach:placeArray">
+                    <a id="places" data-bind="text:title,visible:id,click:$parent.mask"></a>
             </div>
-        </div>
-
-
-
-
-        <!-- loads map -->
-
-        <script src="js/jquery.min.js"></script>
-        <script src="js/lib/knockout-3.2.0.js"></script>
-        <script src="js/app.js"></script>
-        <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhewl-qltN3dzy0w0HAsZmt4Hn1Hz0rFM&v=3&callback=initMap" onerror="ashish()">
-        </script>
-     
+        </nav>
+        <div id='map' data-bind="css: {marg: ww1()>0 }"></div>
+        <div class='hem-2' data-bind='click:close2,css: {marg2: ww()>0 }'>ARTICLE SECTION &#9776</div>
+            <!-- this is used for article section -->
+        <aside class="container-1" data-bind="css: {slides2: ww()>0 }">
+            <div id='nytimes-header' data-bind="text:nytHeaderElem" ></div>
+            <div id='nytimes-articles' data-bind="foreach:Items">
+                <a  class="article" data-bind="text:headline.main,attr: { href:web_url}"></a>
+                <p class="datas" data-bind="text:snippet"></p>
+            </div>
+        </aside>
+    </div>
+    <!-- loads map -->
+    <script src="js/jquery.min.js"></script>
+    <script src="js/lib/knockout-3.2.0.js"></script>
+    <script src="js/app.js"></script>
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBhewl-qltN3dzy0w0HAsZmt4Hn1Hz0rFM&v=3&callback=initMap" onerror="map_error()">
+    </script> 
 </body>
 
 </html>
